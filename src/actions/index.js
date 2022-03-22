@@ -1,13 +1,18 @@
-export const addToList = () => {
+export const addToList = (data) => {
     return {
-        type: "ADD"
+        type: "ADD",
+        payload: {
+            id: new Date().getTime().toString(),
+            data: data
+        }
     }
 
 }
 
-export const deleteFromList = () => {
+export const deleteFromList = (id) => {
     return {
-        type: "DELETE"
+        type: "DELETE",
+        id
     }
 
 }
