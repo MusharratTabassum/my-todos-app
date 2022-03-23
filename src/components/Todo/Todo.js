@@ -18,36 +18,36 @@ const Todo = () => {
     }
 
     return (
-        <div>
+        <div className='container' >
             <div className="main-div">
                 <div className="child-div">
-                    <figure>
-                        <figcaption>Your Todos</figcaption>
-                    </figure>
+                    <h1>Todos</h1>
                 </div>
-                <div className="addItems">
+                <div className="addItems d-flex justify-content-center">
                     <input type="text" placeholder=' add item ... '
                         value={inputInfo} onChange={getInput} />
                     <i className="fa fa-plus add-btn" onClick={() => dispatch(addToList(inputInfo), setInputInfo(''))}></i>
                 </div>
             </div>
 
+            <div className='d-flex justify-content-center'>
+                <div >
+                    {
+                        allList.map((elem) => {
+                            return (
+                                <div className="eachItem" key={elem.id}>
+                                    <h3> {elem.data} </h3>
+                                    <div className='todo-btn'>
+                                        <i className="far fa-trash-alt add-btn" title="Delete item" onClick={() => dispatch(deleteFromList(elem.id))}></i>
 
-            <div className="showItems">
-                {
-                    allList.map((elem) => {
-                        return (
-                            <div className="eachItem" key={elem.id}>
-                                <h3> {elem.data} </h3>
-                                <div className='todo-btn'>
-                                    <i className="far fa-trash-alt add-btn" title="Delete item" onClick={() => dispatch(deleteFromList(elem.id))}></i>
+                                    </div>
+
                                 </div>
+                            )
+                        })
+                    }
 
-                            </div>
-                        )
-                    })
-                }
-
+                </div>
             </div>
 
         </div>
