@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import './Login.css'
 
 const Login = () => {
     const { signInUsingGoogle, handleEmailChange, handlePasswordChange,
@@ -24,7 +25,7 @@ const Login = () => {
             <div className='mt-5'>
                 <div className="login-form mb-5 ">
                     <form onSubmit={handleLoginThroughEmail}>
-                        <h1>Login</h1>
+                        <h1 style={{ color: "rgb(58, 0, 83)", fontWeight: "700" }}>Login</h1>
                         <div>
                             <input onBlur={handleEmailChange} className="input-box" type="email" placeholder="write your email" required />
 
@@ -38,12 +39,7 @@ const Login = () => {
                             <hr />
                             <p className="or">OR</p>
                             <button onClick={handleGoogleLogin} type="button" className="signup-btn">Continue with google</button>
-                            <p>Create an account now <Link to="/register">Register</Link></p>
-                            <p>Forget your password?
-                                <button className='reset' onClick={handleResetPassword}>Reset</button>
-                            </p>
-
-
+                            <p style={{ color: "black" }}>Create an account now <Link to="/register">Register</Link></p>
                         </div>
 
                     </form>

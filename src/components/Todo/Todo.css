@@ -81,11 +81,6 @@ input:focus {
   font-size: 62.5%;
 }
 
-.eachItem:hover {
-  
-  
-}
-
 .showItems .eachItem h3 {
   padding-left: 1rem;
   font-size: 1.6rem;

@@ -10,7 +10,7 @@ const Navigation = () => {
     return (
         <div>
             <Navbar variant="dark" style={{ backgroundColor: "rgb(58, 0, 83)", color: "white" }} sticky="top" collapseOnSelect expand="lg" >
-                <Container fluid>
+                <Container >
                     <Link style={{ fontWeight: "800", fontSize: "25px" }} className="navbar-brand ms-1 " to="/">
                         <span style={{ fontWeight: "900", fontSize: "45px" }} >M</span>yTodos
                     </Link>
@@ -19,12 +19,12 @@ const Navigation = () => {
                         <Nav.Link className="nav-links nav-text" style={{ fontWeight: "800", fontSize: "20px", backgroundColor: "rgb(58, 0, 83)", color: "white" }} as={Link} to="/">Home</Nav.Link>
                         <Nav.Link className="header" style={{ fontWeight: "800", fontSize: "20px" }} >
                             {user?.email ?
-                                <Button onClick={logout} style={{ color: "white", backgroundColor: "rgb(58, 0, 83)", border: "none" }} variant="light">Logout</Button> :
+                                <Button onClick={logout} style={{ fontWeight: "800", fontSize: "16px", color: "white", backgroundColor: "rgb(58, 0, 83)", border: "none" }} variant="light">Logout</Button> :
                                 <Nav.Link style={{ fontWeight: "800", fontSize: "20px", backgroundColor: "rgb(58, 0, 83)", color: "white" }} as={Link} to="/login">Login</Nav.Link>
                             }
                         </Nav.Link>
                         <Navbar.Text>
-                            <Link to="/" style={{ backgroundColor: "rgb(58, 0, 83)", color: "white" }} >{user?.displayName || name.displayName}</Link>
+                            <Link to="/" style={{ fontWeight: "800", fontSize: "20px", backgroundColor: "rgb(58, 0, 83)", color: "white" }}  >{user?.displayName || name.displayName}</Link>
                         </Navbar.Text>
 
                     </Navbar.Collapse>
